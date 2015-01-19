@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>Registro & inicio de sesion para miembros</title>
+		<meta name="description" content="Venta de ropa, zapatos, accesorios al pormayor y detal con los mejores precios y variedades" />
+		<meta name="author" content="Andres Botello" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+	<script>
+    	WebFont.load({
+    	  google: {
+    	    families: ["Montserrat:400,700"]
+    	  }
+    	});
+	</script>
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="stylesheet" type="text/css" href="css/catalogo.css">
+		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/japiPedidos.js"></script>
+		<script type="text/javascript" src="js/jregistro.js"></script>
+		<script type="text/javascript" src="js/jcomunp.js"></script>
+		<script type="text/javascript" src="js/jtit.js"></script>
+		<script type="text/javascript" src="js/jgoogle.js"></script>
+		<script>
+			$( document ).ready(function() {
+				inicioReg();
+			});
+		</script>
+	</head>
+<body >
+<div align="center">
+		<div class="section header">
+			<div class="container max-width fila black-back">
+				<div class="col auto-width" align="left">
+					<a class="brand-gtienda normal" href="index.html">G<span>ran</span>Tienda</a>
+				</div>
+				<div class="col fila auto-width" align="right">
+					<a id="quierovender" class="col-right normal" href="precio.html"><label id="titquierovender">Quiero vender</label></a>
+					<span class="col-right">|</span>
+					<a id="ayuda" class="col-right normal" href="http://wiki.gtienda.com"><label id="titayuda">Ayuda</label></a>
+
+				</div>
+			</div>
+		</div>
+		<div class="section" align="center">
+			<div class="container min-width fila">
+				<div id="titaccesoamiembros" class="col auto-width v3 titulocatalogo1"><h1>Acceso a miembros</h1></div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="container fila">
+				<div class="col2 auto-width v3" align="center">
+					<h2 id="titiniciasesion">Inicia sesión</h2>
+					<form class="login-from">
+			              <label id="aviso" class="DN error">Usuario o clave incorretos</label>            
+			              <input class="cat-input" id="emaillogin" type="email" placeholder="Dirección de email" name="email" required="required" autofocus="autofocus">
+			              <input class="cat-input" id="passwdlogin" type="password" placeholder="Contraseña" name="pass" required="required" onkeydown="if (event.keyCode == 13) login();">
+<!--			              <br><input id="comovendedor" type="checkbox"/>Ingresar como vendedor -->
+			            <div class="login-btn"><a id="titiniciarsesion" class="btn v3" href="#" onclick="login();">Iniciar sesión</a>
+			            </div>
+			       </form>
+				</div>
+				<div class="col2 auto-width v3 border-left" align="center">
+					 <a style="text-decoration: none;color: black;" href="#nombrenuevo"><h2 id="titcreacuenta">Crea tu cuenta</h2></a>
+					<form class="login-from">
+						<label id="error" class="DN error">Usuario o clave incorretos</label>
+			            <input class="cat-input" id="nombrenuevo" type="text" placeholder="Su nombre" name="nombre" required="required" />
+			            <input class="cat-input" id="emailnuevo" type="email" placeholder="email" name="email" required="required">
+			            <input class="cat-input" id="empresanuevo" type="text" placeholder="Nombre de la tienda" name="empresa" required="required" />
+			            <input class="cat-input" id="clave1nuevo" type="password" placeholder="Contraseña" name="pass" required="required">
+			            <input class="cat-input" id="clave2nuevo" type="password" placeholder="Repetir contraseña" name="pass2"  required="required"
+			            	onkeydown="if (event.keyCode == 13) registro();">
+			            <div class="login-btn"><a id="titregistrarse" class="btn v3" href="#" onclick="registro();">Registrarse</a>
+			            </div>
+			        </form>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="container" style="margin-top: 40px;margin-bottom: 40px;">
+				<label id="titproblemacreandocuenta">Tienes algun problema iniciando sesion o creando tu cuenta</label> 
+				<a id="titcontactanos" class="normal" href="contacto.html">Contactanos</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
