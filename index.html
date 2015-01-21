@@ -1,17 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html lang="es">
 <head>
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta http-equiv="Expires" content="0" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="refresh" content="0; url=http://hotel.rigols.com/ocupacion.html" />
+	<!--meta http-equiv="refresh" content="0; url=http://hotel.rigols.com/ocupacion.html" /-->
 	<title>Hotel</title>
-	<meta name="author" content="botpi" />
+	<meta name="description" content="Tu hotel visto y manejado facilmente, puedes ver todo tu hotel, manejar reservas, pagos y planes en la misma hoja o pantalla" />
+	<meta name="author" content="Andres Botello" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<link rel="stylesheet" type="text/css" href="css/catalogo.css">
 </head>
 <body>
+<div align="center">
+	<header class="section header">
+		<div class="container min-width black-back">
+			&nbsp;hola
+		</div>
+	</header>
+	<div class="section">
+		<div class="container">
+			<h2 id="titeditordeproductos" class="col auto-width v3" style="text-align: center;">Iniciar sesión</h2>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container">
+			<form class="login-from" style="width: 40%">
+				<label id="aviso" class="DN error">Usuario o clave incorretos</label>            
+				<input class="cat-input" id="emaillogin" type="email" placeholder="Dirección email" name="email" required="required" autofocus="autofocus">
+				<input class="cat-input" id="passwdlogin" type="password" placeholder="Contraseña" name="pass" required="required" onkeydown="if (event.keyCode == 13) login();">
+				<div class="login-btn">
+					<a id="titiniciarsesion" class="btn v3" href="#" onclick="login();">Iniciar sesión</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 </body>
 </html>
 
