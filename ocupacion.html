@@ -1,33 +1,19 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="es">
 <head>
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta http-equiv="Expires" content="0" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Ocupacion - Hotel</title>
-	<meta name="author" content="botpi" />
-	<!-- Date: 2015-01-02 -->
-	<link rel="stylesheet" type="text/css" href="css/catalogo.css">
+	<meta name="description" content="Tu hotel visto y manejado facilmente, puedes ver todo tu hotel, manejar reservas, pagos y planes en la misma hoja o pantalla" />
+	<meta name="author" content="Andres Botello" />
+	<link rel="stylesheet" type="text/css" href="css/hotelManager.css">
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <style>
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-}
-
-.node {
-  border: solid 1px white;
-  font: 14px sans-serif;
-  font-weight: bolder;
-  line-height: 20px;
-  vertical-align: middle;
-  overflow: hidden;
-  text-align: center;
-  background-color: #DDD;
-}
 
 </style>
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -48,12 +34,14 @@ body {
 </head>
 <body>
     <div id="mask" class="DN" onclick="cancelar();"> </div>
-	<div class="section v2">
+    <div id="mask2" class="DN mask" onclick="menuPop(0);"> </div>
+	<div class="section">
 		<div class="container" style="padding: 10px">
+			<span class="menu-img" onclick="menuPop(1);"></span>
 			<label onclick="addDays(-1);"> &lt;&lt;&lt; </label>
 			Fecha: <input type="text" id="fecha" style="width: 80px" onchange="actualizaDiario();" />
 			<label onclick="addDays(1);"> &gt;&gt;&gt; </label>
-			<a href="http://gtienda.com/wiki/mediawiki-1.23.5/index.php?title=Hotel" target="_blank" ><img src="images/ayuda.JPG" /></a>
+			<!--a href="http://gtienda.com/wiki/mediawiki-1.23.5/index.php?title=Hotel" target="_blank" ><img src="images/ayuda.JPG" /></a-->
 		</div>
 	</div>
 	<div class="section v2">
@@ -61,7 +49,7 @@ body {
 	</div>
 	
 	<div id="hab" class="DN" style="z-index:9010;position:fixed;" align="center">
-		<div class="sector v2 margin-div-img-6">
+		<div class="sector v2">
 			<div align="left">
 				<h3 id="nombrehab">hab</h3>
 		  		<div>Cliente: <input id="cliente" onkeydown="if (event.keyCode == 27) cancelar();"/></div>
@@ -84,7 +72,7 @@ body {
 	</div>
 
 	<div id="pago" class="DN" style="z-index:9010;position:fixed;" align="center">
-		<div class="sector v2 margin-div-img-6">
+		<div class="sector v2 ">
 			<div align="left">
 				<h3 id="nombrehab2">hab</h3>
 		  		<div>Cliente: <label id="cliente2"> </label></div>
@@ -98,6 +86,11 @@ body {
 			<a id="AceptarPago" class="btn v4" href="#" onclick="aceptarPago()">Aceptar</a>
 			<a class="btn v4" href="#" onclick="cancelar()">Cancelar</a>
 		</div>
+	</div>
+	<div id="menu" class="config-menu">
+		<h2>Menu</h2>
+		<a class="btn-a v2" href="http://gtienda.com/wiki/mediawiki-1.23.5/index.php?title=Hotel" target="_blank"><div><span>Ayuda</span></div></a>
+		<a class="btn-a v2"><div><span>Salir</span></div></a>
 	</div>
 </body>
 </html>

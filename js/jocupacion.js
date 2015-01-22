@@ -182,3 +182,16 @@ function tapar()
     $('#mask').fadeIn(100);    
     $('#mask').fadeTo("slow",0.6);
 }
+
+function menuPop(state)
+{
+	if (state==1) {
+    	$("#menu").addClass("out");
+    	$("#mask2").removeClass("DN");
+    	$('#mask2').css({'width':$(window).width(),'height':$(document).height()});
+   }
+   else {
+    	$("#mask2").addClass("DN");
+    	$("#menu").removeClass("out");
+	}
+}
