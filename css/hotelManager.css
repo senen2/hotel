@@ -3,6 +3,13 @@ body {
   margin: 0px;
   padding: 0px;
 }
+.fondo {
+    background-image: url("../images/fondo.jpg");
+	background-position: 50% 50%;
+	background-size: cover;
+	background-attachment: fixed;
+	
+}
 .menu-img {
 	background: transparent url("../images/menu-finder20x20.png") no-repeat left 30%;
 	padding-left: 20px;
@@ -21,11 +28,13 @@ body {
   overflow: hidden;
   text-align: center;
   background-color: #DDD;
-  margin-bottom: 3px;
-  margin-right: 3px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+	box-shadow: gray 1px 1px 1px 1px;
 }
 .node:hover {
-	box-shadow: gray 1px 1px 1px 1px;
+	box-shadow: gray 0px 0px 0px 1px;
+
 }
 .config-menu {
 	position: fixed;

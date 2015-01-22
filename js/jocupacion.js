@@ -172,16 +172,21 @@ function cancelar()
 {
 	$("#hab").addClass("DN");
 	$("#pago").addClass("DN");
+	$("#mask").addClass("DN");
     $('#mask').fadeOut(100);    
     $('#mask').fadeTo("slow",0);
+    $('#mask').css({'width':0,'height':0});
 }
 
 function tapar()
 {
+	$("#mask").removeClass("DN");
     $('#mask').css({'width':$(window).width(),'height':$(document).height()});
     $('#mask').fadeIn(100);    
     $('#mask').fadeTo("slow",0.6);
 }
+
+// ---------------------- menu
 
 function menuPop(state)
 {
