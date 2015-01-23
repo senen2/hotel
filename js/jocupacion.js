@@ -16,10 +16,12 @@ function inicioOcupacion()
 	pagina = "hOcupacion";
 	ayuda = "http://gtienda.com/wiki/mediawiki-1.23.5/index.php?title=Implementacion&section=#Subir_imagenes_de_los_productos";
 	leeServidor();
-	LeeOcupacionH(1, new Date(), dibujaOcupacion)
+	$("#fecha").datepicker();
+	$("#fecha").datepicker( "setDate", new Date());
+	actualizaOcupacion();
 }
 
-function dibujaOcupacion(datos, fecha)
+function dibujaOcupacion(datos)
 {
 	gdatos = datos;
 	var n = (Math.sqrt(gdatos.length) + 1);
@@ -27,12 +29,12 @@ function dibujaOcupacion(datos, fecha)
 	var cad = "", noches
 		t = $("#ocupacion").position().top,
 		l = $("#ocupacion").position().left,
-		h = parseInt(Math.sqrt(($(window).width()-l*2)*($(document).height()-t-40)/n/1.62))-1,
+		h = parseInt(Math.sqrt(($(window).width())*($(document).height()-t-40)/n/1.62))-1,
 		w = parseInt(1.62 * h); 		
  		
 	$.each(gdatos, function(i, item) {
 		noches = item.noches;
-		if (noches==null)
+		if (item.noches==null)
 			noches="";
 		
 		cad += '<div class="node col item" onclick="verHabitacion(' + item.ID + ')" style="' 
@@ -41,12 +43,13 @@ function dibujaOcupacion(datos, fecha)
 			+ 'height:' + h + 'px;'
 			+ 'background-color:' + item.color + ';'
 			+ '">' + item.nombre
+			+ ' ' + item.nombretipo
 			+ '<br>' + noches
 			+ '<br>' + item.cliente
 			+ '</div>';
 	});	
 	$("#ocupacion").html(cad);
-	$("#fecha").datepicker( "setDate", new Date(fecha));
+	
 }
 
 function actualizaOcupacion()
@@ -68,12 +71,12 @@ function verHabitacion(IDhab)
 	LeeHabitacionH(IDhab, new Date($("#fecha").val()), dibujaHabitacion);
 }
 
-function dibujaHabitacion(datos, fecha)
+function dibujaHabitacion(datos)
 {
 	gdatosdet = datos;
     $('#hab').css({'top':$(window).height()/2-$("#hab").height()/2,'left':$(window).width()/2-$("#hab").width()/2});
 	$("#hab").removeClass("DN");
-	$("#nombrehab").html(datos.hab.nombre);
+	$("#nombrehab").html(datos.hab.nombre + " " + datos.hab.nombretipo);
 	$("#cliente").val(datos.hab.cliente);
 	$("#telefono").val(datos.hab.telefono);
 	$("#noches").val(datos.hab.noches);
@@ -110,7 +113,7 @@ function dibujaHabitacion(datos, fecha)
 	}
 
     $('#pago').css({'top':$(window).height()/2-$("#pago").height()/2,'left':$(window).width()/2-$("#pago").width()/2});
-	$("#nombrehab2").html(datos.hab.nombre);
+	$("#nombrehab2").html(datos.hab.nombre + " " + datos.hab.nombretipo);
 	$("#cliente2").html(datos.hab.cliente);
 	$("#precio2").html(datos.hab.precio.formatMoney(0));
 	$("#saldo2").html(datos.hab.pendiente.formatMoney(0));
@@ -132,8 +135,7 @@ function actualizaPrecio()
 
 function grabarNotas()
 {
-	if ($("#notas").val()!="")
-		GrabarNotasH(gdatosdet.hab.IDreserva, $("#notas").val())
+	GrabarNotasH(gdatosdet.hab.IDreserva, $("#notas").val())
 }
 
 

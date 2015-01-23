@@ -35,14 +35,19 @@
 <body>
     <div id="mask" class="DN" onclick="cancelar();"> </div>
     <div id="mask2" class="DN mask" onclick="menuPop(0);"> </div>
-	<div class="section">
-		<div class="container" style="padding: 10px">
-			<span class="menu-img" onclick="menuPop(1);"></span>
-			<label onclick="addDays(-1);"> &lt;&lt;&lt; </label>
-			Fecha: <input type="text" id="fecha" style="width: 80px" onchange="actualizaDiario();" />
-			<label onclick="addDays(1);"> &gt;&gt;&gt; </label>
+	<div class="section" style="padding: 10px">
+		<div class="container" style="padding: 5px;background-color: #EEEEEE">
+			<div class="node col" style="width: 30px; height: 20px; padding: 5px">
+				<span class="menu-img" onclick="menuPop(1);"></span>
+			</div>
+			<div class="node"  style="padding: 5px; width: 300px; height: 20px">
+				<label onclick="addDays(-1);"> &lt;&lt;&lt; </label>
+				Fecha: <input type="text" id="fecha" style="width: 80px" onchange="actualizaOcupacion();" />
+				<label onclick="addDays(1);"> &gt;&gt;&gt; </label>				
+			</div>
 			<!--a href="http://gtienda.com/wiki/mediawiki-1.23.5/index.php?title=Hotel" target="_blank" ><img src="images/ayuda.JPG" /></a-->
 		</div>
+		<hr style="border-width: 2px" />
 	</div>
 	<div class="section v2">
 		<div id="ocupacion" class="container fila" > </div>
@@ -89,7 +94,7 @@
 	</div>
 	<div id="menu" class="config-menu">
 		<h2>Menu</h2>
-		<a class="btn-a v2" href="http://gtienda.com/wiki/mediawiki-1.23.5/index.php?title=Hotel" target="_blank"><div><span>Ayuda</span></div></a>
+		<a class="btn-a v2" href="http://gtienda.com/wiki/mediawiki-1.23.5/index.php?title=Hotel" target="_blank" onclick="menuPop(0);"><div><span>Ayuda</span></div></a>
 		<a class="btn-a v2"><div><span>Salir</span></div></a>
 	</div>
 </body>

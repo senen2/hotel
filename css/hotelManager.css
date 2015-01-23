@@ -20,16 +20,16 @@ body {
 	box-shadow: black 1px 1px 1px 0px;
 }
 .node {
-  border: solid 1px white;
-  font: 14px sans-serif;
-  font-weight: bolder;
-  line-height: 20px;
-  vertical-align: middle;
-  overflow: hidden;
-  text-align: center;
-  background-color: #DDD;
-  margin-bottom: 5px;
-  margin-right: 5px;
+  	border: solid 1px white;
+  	font: 12px sans-serif;
+  	font-weight: bold;
+  	line-height: 20px;
+  	vertical-align: middle;
+  	overflow: hidden;
+  	text-align: center;
+  	background-color: #DDD;
+  	margin-bottom: 5px;
+  	margin-right: 5px;
 	box-shadow: gray 1px 1px 1px 1px;
 }
 .node:hover {
@@ -101,6 +101,7 @@ body {
 	-webkit-transition: all 200ms ease;
 	-o-transition: all 200ms ease;
 	transition: all 200ms ease;
+	text-decoration: none;
 }
 .btn.v2 {
 	padding: 2px 5px;

@@ -35,7 +35,7 @@ function LeeOcupacionH(IDhotel, fecha, funcion)
 		jsonp: "callback",
 		dataType: "jsonp",
 		success: function( response ) {
-			funcion(response, fecha);
+			funcion(response);
 		}
 	});	
 }
