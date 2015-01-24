@@ -3,21 +3,72 @@ body {
   margin: 0px;
   padding: 0px;
 }
+.cat-input {
+    width: 90%;
+    height: 38px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555;
+    vertical-align: middle;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+    box-sizing: border-box;
+}
+.cph {
+
+}
+.cph:hover {
+	cursor:pointer;
+}
+.padding {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.max-width {
+	width:99.5%;
+}
+.auto-width-2 {
+	width:49.5%;	
+}
 .fondo {
+	padding-top: 107px;
+	padding-bottom: 107px;
     background-image: url("../images/fondo.jpg");
-	background-position: 50% 50%;
+	background-position: 20% 80%;
 	background-size: cover;
 	background-attachment: fixed;
 	
 }
+.error {
+	color:red;
+	font-size: 18px;
+}
+.login-from input {
+	box-sizing: border-box;
+}
+.arrow-rt {
+	background: transparent url("../images/avanza20.png") no-repeat left top;
+	padding-left: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-size: 45%;
+}
+.arrow-lf {
+	background: transparent url("../images/retrocede20.png") no-repeat left top;
+	padding-left: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-size: 45%;
+}
 .menu-img {
 	background: transparent url("../images/menu-finder20x20.png") no-repeat left 30%;
 	padding-left: 20px;
-	margin: 10px;
 }
-.menu-img:hover {
-	//background: rgba(0, 0, 0, 0.1) url("../images/menu-finder20x20.png") no-repeat left 30%;
-	box-shadow: black 1px 1px 1px 0px;
+.div-bottom-margin-6 div {
+	margin-bottom: 6px;
 }
 .node {
   	border: solid 1px white;
@@ -28,9 +79,9 @@ body {
   	overflow: hidden;
   	text-align: center;
   	background-color: #DDD;
-  	margin-bottom: 5px;
-  	margin-right: 5px;
-	box-shadow: gray 1px 1px 1px 1px;
+  	margin-bottom: 1px;
+  	margin-right: 1px;
+	//box-shadow: gray 1px 1px 1px 1px;
 }
 .node:hover {
 	box-shadow: gray 0px 0px 0px 1px;
@@ -40,7 +91,6 @@ body {
 	position: fixed;
 	top: 0%;
 	left: -100%;
-	//padding: 20px;
 	height: 100%;
 	background-color: white;
 	-webkit-transition: all 200ms ease;
@@ -54,7 +104,6 @@ body {
 }
 .config-menu.out {
 	left: 0%;
-	//background-color: rgba(233, 226, 248, 0.95);
 }
 .section {
 	padding-left: 60px;
@@ -97,7 +146,7 @@ body {
 	border-radius: 5px;
 	background-color: black;
 	color: white;
-	background-image: linear-gradient(#FF9742, #F58427);
+	background-image: linear-gradient(#98ABE0, #8175BA);
 	-webkit-transition: all 200ms ease;
 	-o-transition: all 200ms ease;
 	transition: all 200ms ease;
@@ -113,10 +162,11 @@ body {
 	font: -webkit-small-control;
 }
 .btn:hover {
-	background-image: linear-gradient(#FFBF5E, #F58427)
+	background-image: linear-gradient(#B6C6E0, #8175BA)
 }
 .btn-a {
 	text-decoration: none;
+	cursor: pointer;
 }
 .btn-a span {
 	margin-right: 11px;

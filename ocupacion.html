@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -12,10 +11,6 @@
 	<meta name="author" content="Andres Botello" />
 	<link rel="stylesheet" type="text/css" href="css/hotelManager.css">
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-<style>
-
-
-</style>
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	<script type="text/javascript" src="js/jocupacion.js"></script>
@@ -35,27 +30,40 @@
 <body>
     <div id="mask" class="DN" onclick="cancelar();"> </div>
     <div id="mask2" class="DN mask" onclick="menuPop(0);"> </div>
-	<div class="section" style="padding: 10px">
-		<div class="container" style="padding: 5px;background-color: #EEEEEE">
-			<div class="node col" style="width: 30px; height: 20px; padding: 5px">
-				<span class="menu-img" onclick="menuPop(1);"></span>
+	<div class="section">
+		<div class="container padding fila max-width">
+			<div class="col auto-width-2" align="left">
+				<div class="cph" onclick="menuPop(1);">
+					<div class="col"><span class="menu-img"> </span></div>
+					<div class="col" style="padding-left: 3px;">Hotel Bahía Olivo</div>
+				</div>
 			</div>
-			<div class="node"  style="padding: 5px; width: 300px; height: 20px">
-				<label onclick="addDays(-1);"> &lt;&lt;&lt; </label>
-				Fecha: <input type="text" id="fecha" style="width: 80px" onchange="actualizaOcupacion();" />
-				<label onclick="addDays(1);"> &gt;&gt;&gt; </label>				
+			<div class="col auto-width-2" align="right">
+				<div class="DN" style="width: 250px;">
+					<label onclick="addDays(-1);"> &lt;&lt;&lt; </label>
+					Fecha: <input type="text" id="fecha" style="width: 80px" onchange="actualizaOcupacion();" />
+					<label onclick="addDays(1);"> &gt;&gt;&gt; </label>
+				</div>
+				<!--si llego a cambiar el id=fecha los cuadros de las habitaciones cambian y se ven unos numeros raros -->
+				<div>
+					<span class="arrow-lf cph"> </span>
+					<label class="cph" style="font-size: 16px;font-weight: 700;">Ene</label>
+					<label class="cph" style="font-size: 20px;font-weight: 700;">23</label>
+					<span class="arrow-rt cph"> </span>
+				</div>			
 			</div>
 			<!--a href="http://gtienda.com/wiki/mediawiki-1.23.5/index.php?title=Hotel" target="_blank" ><img src="images/ayuda.JPG" /></a-->
 		</div>
-		<hr style="border-width: 2px" />
+		
 	</div>
+	<hr style="border-width: 1px" />
 	<div class="section v2">
 		<div id="ocupacion" class="container fila" > </div>
 	</div>
 	
-	<div id="hab" class="DN" style="z-index:9010;position:fixed;" align="center">
+	<div id="hab" class="DN" style="z-index:9010;position:fixed;top: 30%; left: 30%;" align="center">
 		<div class="sector v2">
-			<div align="left">
+			<div class="div-bottom-margin-6" align="left">
 				<h3 id="nombrehab">hab</h3>
 		  		<div>Cliente: <input id="cliente" onkeydown="if (event.keyCode == 27) cancelar();"/></div>
 		  		<div>Telefono: <input id="telefono" /></div>
@@ -66,19 +74,19 @@
 				<div id="divnotas">
 					<br>
 					<div><textarea id="notas" style="width: 280px;height: 120px" placeholder="Aquí puede escribir las notas"></textarea></div>
-					<a id="botonNotas" class="btn v4" href="#" onclick="grabarNotas()">Grabar Notas</a>					
+					<a id="botonNotas" class="btn" href="#" onclick="grabarNotas()">Grabar Notas</a>					
 				</div>
 		  	</div>
 		  	<br>
-			<a id="botonPagar" class="btn v4" href="#" onclick="iraPago()">Pagar</a>
-			<a id="botonAceptar" class="btn v4" href="#" onclick="aceptar()">Guardar</a>
-			<a class="btn v4" href="#" onclick="cancelar()">Cancelar</a>
+			<a id="botonPagar" class="btn" href="#" onclick="iraPago()">Pagar</a>
+			<a id="botonAceptar" class="btn" href="#" onclick="aceptar()">Guardar</a>
+			<a class="btn" href="#" onclick="cancelar()">Cancelar</a>
 		</div>
 	</div>
 
-	<div id="pago" class="DN" style="z-index:9010;position:fixed;" align="center">
-		<div class="sector v2 ">
-			<div align="left">
+	<div id="pago" class="DN" style="z-index:9010;position:fixed;top: 30%; left: 30%;" align="center">
+		<div class="sector v2">
+			<div class="div-bottom-margin-6" align="left">
 				<h3 id="nombrehab2">hab</h3>
 		  		<div>Cliente: <label id="cliente2"> </label></div>
 		  		<div>Precio: <label id="precio2"> </label></div>		  		
@@ -88,8 +96,8 @@
 		  		<div>Nota: <input id="nota" /></div>
 		  	</div>
 		  	<br>
-			<a id="AceptarPago" class="btn v4" href="#" onclick="aceptarPago()">Aceptar</a>
-			<a class="btn v4" href="#" onclick="cancelar()">Cancelar</a>
+			<a id="AceptarPago" class="btn" href="#" onclick="aceptarPago()">Aceptar</a>
+			<a class="btn" href="#" onclick="cancelar()">Cancelar</a>
 		</div>
 	</div>
 	<div id="menu" class="config-menu">

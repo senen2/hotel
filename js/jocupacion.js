@@ -41,7 +41,7 @@ function dibujaOcupacion(datos)
 			+ 'width:' + w + 'px;'
 			+ 'max-width:' + w + 'px;'
 			+ 'height:' + h + 'px;'
-			+ 'background-color:' + item.color + ';'
+			+ 'background-image:' + item.color + ';'
 			+ '">' + item.nombre
 			+ ' ' + item.nombretipo
 			+ '<br>' + noches
