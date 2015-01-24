@@ -33,6 +33,9 @@ body {
 .auto-width-2 {
 	width:49.5%;	
 }
+.auto-width-tipo2 {
+	width:49.5%;
+}
 .fondo {
 	padding-top: 107px;
 	padding-bottom: 107px;
@@ -53,13 +56,11 @@ body {
 	background: transparent url("../images/avanza20.png") no-repeat left top;
 	padding-left: 20px;
 	margin-left: 10px;
-	margin-right: 10px;
 	background-size: 45%;
 }
 .arrow-lf {
 	background: transparent url("../images/retrocede20.png") no-repeat left top;
 	padding-left: 20px;
-	margin-left: 10px;
 	margin-right: 10px;
 	background-size: 45%;
 }
@@ -81,7 +82,6 @@ body {
   	background-color: #DDD;
   	margin-bottom: 1px;
   	margin-right: 1px;
-	//box-shadow: gray 1px 1px 1px 1px;
 }
 .node:hover {
 	box-shadow: gray 0px 0px 0px 1px;
@@ -220,10 +220,43 @@ body {
     z-index: 9000;
     background-color: rgba(0, 0, 0, 0.2);
 }
+.width-40 {
+	width: 40%;
+}
+.name-menu {
+	padding-left: 3px;
+}
 #mask {
     position: absolute;
     z-index: 9000;
     background-color: black;
 }
-
-
+@media (max-width: 1024px) {
+	
+}
+@media (max-width: 991px) {
+	
+}
+@media (max-width: 770px) {
+	.width-40 {
+		width: 60%;
+	}
+}
+@media (max-width: 481px) {
+	.section {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.width-40 {
+		width: 100%;
+	}
+	.auto-width-tipo2 {
+		width: 99.5%;
+	}
+	
+@media (max-width: 320px) {
+	.name-menu {
+		display: none;
+	}
+}
+}
