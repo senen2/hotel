@@ -21,10 +21,6 @@
 		$( document ).ready(function() {
 			inicioOcupacion();
 		});
-
-		$(function() {
-			$("#fecha").datepicker();
-		});		
 	</script>
 </head>
 <body>
@@ -38,18 +34,11 @@
 					<div class="col name-menu" style="">Hotel Bahía Olivo</div>
 				</div>
 			</div>
-			<div class="col auto-width-2" align="right">
-				<div class="DN" style="width: 250px;">
-					<label onclick="addDays(-1);"> &lt;&lt;&lt; </label>
-					Fecha: <input type="text" id="fecha" style="width: 80px" onchange="actualizaOcupacion();" />
-					<label onclick="addDays(1);"> &gt;&gt;&gt; </label>
-				</div>
-				<!--si llego a cambiar el id=fecha los cuadros de las habitaciones cambian y se ven unos numeros raros -->
+			<div class="col auto-width-2">
 				<div>
-					<span class="arrow-lf cph"> </span>
-					<label class="cph" style="font-size: 16px;font-weight: 700;">Ene</label>
-					<label class="cph" style="font-size: 20px;font-weight: 700;">23</label>
-					<span class="arrow-rt cph"> </span>
+					<span class="arrow-lf cph" onclick="addDays(-1);"> </span>
+					<input type="text" id="fecha" style="width: 80px; border-style: none" onchange="actualizaOcupacion();" />
+					<span class="arrow-rt cph" onclick="addDays(1);"> </span>
 				</div>			
 			</div>
 			<!--a href="http://gtienda.com/wiki/mediawiki-1.23.5/index.php?title=Hotel" target="_blank" ><img src="images/ayuda.JPG" /></a-->
@@ -102,8 +91,9 @@
 	</div>
 	<div id="menu" class="config-menu">
 		<h2>Menu</h2>
+		<a class="btn-a v2" href="micuenta.html"><div><span>Mi Cuenta</span></div></a>
 		<a class="btn-a v2" href="http://gtienda.com/wiki/mediawiki-1.23.5/index.php?title=Hotel" target="_blank" onclick="menuPop(0);"><div><span>Ayuda</span></div></a>
-		<a class="btn-a v2"><div><span>Salir</span></div></a>
+		<a class="btn-a v2" onclick="salir();"><div><span>Salir</span></div></a>
 	</div>
 </body>
 </html>

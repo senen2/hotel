@@ -7,7 +7,7 @@
 	<meta http-equiv="Expires" content="0" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<!--meta http-equiv="refresh" content="0; url=http://hotel.rigols.com/ocupacion.html" /-->
-	<title>Hotel</title>
+	<title>Mi cuenta</title>
 	<meta name="description" content="Tu hotel visto y manejado facilmente, puedes ver todo tu hotel, manejar reservas, pagos y planes en la misma hoja o pantalla" />
 	<meta name="author" content="Andres Botello" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,38 +16,39 @@
 
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-	<script type="text/javascript" src="js/jindex.js"></script>
+	<script type="text/javascript" src="js/jmicuenta.js"></script>
 	<script type="text/javascript" src="js/jcomunp.js"></script>
 	<script type="text/javascript" src="js/japiHotel.js"></script>
 	<script type="text/javascript" src="js/jgoogle.js"></script>
 	<script>
 		$( document ).ready(function() {
-			pagina = "hLogin";
+			pagina = "hmicuenta";
 			leeServidor();
-		});
+			encabezado = getCookie("encabezado");
+			if (encabezado==null || encabezado=="" || encabezado=="'',''")
+				encabezado="'',''";			
+				});
 	</script>
 
 </head>
 <body>
 <div align="center">
-	<!--header class="section header">
-		<div class="container min-width black-back">
-			&nbsp;hola
-		</div>
-	</header-->
 	<div class="section">
+		<br /><br />
 		<div class="container max-width fila">
-			<h2 class="col auto-width-tipo2" style="text-align: center;">Iniciar sesión</h2>
+			<h2 class="col auto-width-tipo2" style="text-align: center;">Cambio de contraseña</h2>
 		</div>
 	</div>
-	<div class="section v2 fondo">
+	<div class="section v2">
 		<div class="container">
 			<form class="login-from width-40">
-				<label id="aviso" class="DN error">Usuario o clave incorretos</label>            
-				<input class="cat-input" id="email" type="email" placeholder="Dirección email" name="email" required="required" autofocus="autofocus">
-				<input class="cat-input" id="passwd" type="password" placeholder="Contraseña" name="pass" required="required" onkeydown="if (event.keyCode == 13) login();">
+				<label id="aviso" class="DN error">Contraseñas diferentes</label>            
+				<input class="cat-input" id="passwd"  type="password" placeholder="Contraseña actual" name="email" required="required" autofocus="autofocus">
+				<input class="cat-input" id="passwd1" type="password" placeholder="Contraseña nueva" name="pass" required="required">
+				<input class="cat-input" id="passwd2" type="password" placeholder="Contraseña nueva otra vez" name="pass" required="required" onkeydown="if (event.keyCode == 13) cambiaClave();">
 				<div class="login-btn">
-					<a class="btn v3" href="#" onclick="login();">Iniciar sesión</a>
+					<a class="btn v3" href="#" onclick="cambiaClave();">Grabar</a>
+					<a class="btn v3" href="#" onclick="cancelar();">Cancelar</a>
 				</div>
 			</form>
 		</div>

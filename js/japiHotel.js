@@ -2,6 +2,18 @@
  * @author botpi
  */
     
+function LoginH(email, token, funcion)
+{
+	$.ajax({
+		url: "http://" + servidor + "/function/LoginH('" + email + "','" + token + "')?pagina=" + pagina,
+		jsonp: "callback",
+		dataType: "jsonp",
+		success: function( response ) {
+			funcion(email, response);
+		}
+	});	
+}
+    
 function LeeHabitacionesH(IDhotel, funcion)
 {
 	$.ajax({
@@ -51,7 +63,7 @@ function CreaReservaH(cliente, telefono, IDhab, IDplan, desde, noches, precio, f
 	datos.noches = noches;		
 	datos.precio = precio;		
 
-	$.post( 'http://' + servidor + "/functiond/CreaReservaH('botpi@botpi.com','123')?pagina=" + pagina, JSON.stringify(datos))
+	$.post( 'http://' + servidor + "/functiond/CreaReservaH(" + encabezado + ")?pagina=" + pagina, JSON.stringify(datos))
 	 	.always(function(){
 	 		funcion();
 	 	});
@@ -88,5 +100,17 @@ function GrabarNotasH(IDreserva, notas)
 	datos.IDreserva = IDreserva;		
 	datos.notas = notas;		
 
-	$.post( 'http://' + servidor + "/functiond/GrabarNotasH('botpi@botpi.com','123')?pagina=" + pagina, JSON.stringify(datos));	
+	$.post( 'http://' + servidor + "/functiond/GrabarNotasH(" + encabezado + ")?pagina=" + pagina, JSON.stringify(datos));	
+}
+    
+function CambiaClaveH(clave, clavenueva, funcion)
+{
+	$.ajax({
+		url: "http://" + servidor + "/function/CambiaClaveH(" + encabezado + ",'" + clave + "','" + clavenueva + "')?pagina=" + pagina,
+		jsonp: "callback",
+		dataType: "jsonp",
+		success: function( response ) {
+			funcion(response);
+		}
+	});	
 }

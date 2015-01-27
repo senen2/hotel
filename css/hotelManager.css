@@ -146,7 +146,8 @@ body {
 	border-radius: 5px;
 	background-color: black;
 	color: white;
-	background-image: linear-gradient(#98ABE0, #8175BA);
+/*	background-image: linear-gradient(#98ABE0, #8175BA); */
+	background-image: linear-gradient(#FF9742, #F58427);
 	-webkit-transition: all 200ms ease;
 	-o-transition: all 200ms ease;
 	transition: all 200ms ease;
@@ -162,7 +163,8 @@ body {
 	font: -webkit-small-control;
 }
 .btn:hover {
-	background-image: linear-gradient(#B6C6E0, #8175BA)
+	/*background-image: linear-gradient(#B6C6E0, #8175BA)*/
+	background-image: linear-gradient(#FFBF5E, #F58427)
 }
 .btn-a {
 	text-decoration: none;

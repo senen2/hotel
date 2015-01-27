@@ -291,3 +291,24 @@ var n = this,
    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
  };
  
+// ------------------------- datepicker
+
+function poneDatePicker(selector, formato, fecha)
+{
+	$(selector).datepicker();
+	$(selector).datepicker( "option", "dayNamesMin", [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ]);
+	$(selector).datepicker( "option", "monthNamesShort", [ "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic" ]);
+	$(selector).datepicker( "option", "monthNames", [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"
+													, "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ]);
+	if (formato!="")
+		$(selector).datepicker( "option", "dateFormat", formato);
+	$(selector).datepicker( "setDate", fecha);
+	
+}
+
+function tomaDatePicker(valor)
+{
+	var t = $("#fecha").val().replace("Ene","Jan").replace("Abr","Apr").replace("Ago","Aug").replace("Dic","Dec");
+	return new Date(t);
+	
+}

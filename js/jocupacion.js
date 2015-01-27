@@ -7,22 +7,19 @@ function inicioOcupacion()
 	encabezado = getCookie("encabezado");
 	if (encabezado==null || encabezado=="" || encabezado=="'',''")
 		encabezado="'',''";
-	
-/*	if (encabezado==null || encabezado=="'','',''" || encabezado.split(',')[0]=="''") {
-		document.cookie = "pagpend=" + document.URL;			
-		window.location.assign("registro.html");		
-	}*/
 		
-	pagina = "hOcupacion";
 	ayuda = "http://gtienda.com/wiki/mediawiki-1.23.5/index.php?title=Implementacion&section=#Subir_imagenes_de_los_productos";
+	pagina = "hOcupacion";
 	leeServidor();
-	$("#fecha").datepicker();
-	$("#fecha").datepicker( "setDate", new Date());
+	poneDatePicker("#fecha", "", new Date()); //"d M yy"
 	actualizaOcupacion();
 }
 
 function dibujaOcupacion(datos)
 {
+	if (!datos) 
+		window.location.assign("index.html");
+		
 	gdatos = datos;
 	var n = (Math.sqrt(gdatos.length) + 1);
 	n = n * n; 
@@ -60,7 +57,7 @@ function actualizaOcupacion()
 
 function addDays(dias)
 {
-	var f = new Date($("#fecha").val());
+	var f = tomaDatePicker($("#fecha").val());
 	f = f.setDate(f.getDate() + dias);
 	$("#fecha").datepicker( "setDate", new Date(f));
 	actualizaOcupacion();
@@ -148,7 +145,7 @@ function aceptar()
 			alert("faltan datos");
 		}
 		else {
-			var precio = parseFloat($("#precio").val().replace(",",""));
+			var precio = parseFloat($("#precio").val().replace(",","").replace(",",""));
 			CreaReservaH($("#cliente").val(), $("#telefono").val(), gdatosdet.hab.ID, $("#plan").val()
 				, new Date($("#fecha").val()), $("#noches").val(), precio, actualizaOcupacion);		
 		}
@@ -201,4 +198,11 @@ function menuPop(state)
     	$("#mask2").addClass("DN");
     	$("#menu").removeClass("out");
 	}
+}
+
+function salir()
+{
+	encabezado="'',''";
+	document.cookie = "encabezado=" + encabezado;
+	window.location.assign("index.html")
 }

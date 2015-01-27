@@ -1,3 +1,6 @@
+
+
+
 function leeServidor()
 {
 	//imagedir = "https://s3.amazonaws.com/gtienda/"
